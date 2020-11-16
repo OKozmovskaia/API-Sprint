@@ -60,15 +60,18 @@ setInterval(drawClock, 1000);
     
 
     // calculate the angle of the hour hand and draw it: length 50% of radius, width 7% of radius
+    // for 1 sec Hour Hand turn on 0,0017° = (1/60)*0,1°
     hour = hour % 12;
     hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
     drawHand(ctx, hour, radius*0.5, radius*0.07);
 
     // calculate the angle of the minute hand and draw it: length 80% of radius, width 7% of radius
+    // for 1 sec Minute Hand turn on 0,1° = (1/60)*6°
     minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
     drawHand(ctx, minute, radius*0.8, radius*0.07);
 
     // calculate the angle of the second hand and draw it: length 90% of radius, width 2% of radius
+    // for 1 sec Second Hand turn on 6° = (1/60)*360°
     second = (second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02);
 
